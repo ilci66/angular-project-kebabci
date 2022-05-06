@@ -11,6 +11,8 @@ import { CreateOrderComponent } from './create-order/create-order.component';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { StoryComponent } from './story/story.component';
+import { BestSellersComponent } from './best-sellers/best-sellers.component';
+import { BestSellerItemComponent } from './best-seller-item/best-seller-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { StoryComponent } from './story/story.component';
     CreateOrderComponent,
     FooterComponent,
     BannerComponent,
-    StoryComponent
+    StoryComponent,
+    BestSellersComponent,
+    BestSellerItemComponent
   ],
   imports: [
     BrowserModule,

@@ -6,9 +6,10 @@
 }
 .navbar-component {
     z-index: 2;
+    position: absolute;
 }
 .banner-component {
-    position: absolute;
+    /* position: absolute; */
     
 }
 .footer {
