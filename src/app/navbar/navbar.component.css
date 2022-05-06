@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.4);
+    border-bottom: 2px solid var(--red-ryb);
+    padding: 30px 20px;
+    font-size: 1.8rem;
+}
+.nav-right-box{
+    margin-left: auto;
+    margin-right: 20px;
+}
+.nav-right-box > a {
+    margin-left: 10px;
+}

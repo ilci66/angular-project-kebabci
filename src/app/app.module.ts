@@ -8,6 +8,9 @@ import { ServicesComponent } from './services/services.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { CreateOrderComponent } from './create-order/create-order.component';
+import { FooterComponent } from './footer/footer.component';
+import { BannerComponent } from './banner/banner.component';
+import { StoryComponent } from './story/story.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { CreateOrderComponent } from './create-order/create-order.component';
     ServicesComponent,
     NavbarComponent,
     AboutComponent,
-    CreateOrderComponent
+    CreateOrderComponent,
+    FooterComponent,
+    BannerComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

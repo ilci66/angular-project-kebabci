@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --black: rgba(0, 0, 0, 0.815);
+    --white: hsla(0, 0%, 100%, 1);
+    --blue: rgb(37, 84, 128);
+    --baby-powder: hsla(60, 100%, 99%, 1);
+    --khaki-web: hsla(44, 17%, 69%, 1);
+    --amber-sae-ece: hsla(28, 100%, 53%, 1);
+    --red-ryb: hsla(360, 100%, 55%, 1);
+    --banner-height: 600px; 
+}
+img {
+    width: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+a {
+    color: var(--white);
+    text-decoration: none;
+    transition: 0.2s;
+}
+a:hover {
+    color: var(--red-ryb);
+}
