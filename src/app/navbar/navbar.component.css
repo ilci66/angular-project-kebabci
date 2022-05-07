@@ -1,7 +1,7 @@
 .navbar-wrapper {
     margin-left: 0px;
     margin-right: 0px;
-    width: 100vw;
+    width: 100%;
 }
 nav {
     display: flex;

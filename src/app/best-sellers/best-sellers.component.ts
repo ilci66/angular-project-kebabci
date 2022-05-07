@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./best-sellers.component.css']
 })
 export class BestSellersComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit(): void {

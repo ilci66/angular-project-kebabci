@@ -7,6 +7,8 @@
 .navbar-component {
     z-index: 2;
     position: absolute;
+    left: 0;
+    right: 0;
 }
 .banner-component {
     /* position: absolute; */
