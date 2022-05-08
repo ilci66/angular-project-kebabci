@@ -14,6 +14,7 @@ import { StoryComponent } from './story/story.component';
 import { BestSellersComponent } from './best-sellers/best-sellers.component';
 import { BestSellerItemComponent } from './best-seller-item/best-seller-item.component';
 import { CartComponent } from './cart/cart.component';
+
 import { StoreModule } from '@ngrx/store';
 import { reducers, metaReducers } from './reducers';
 
