@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BestSellersComponent implements OnInit {
   
   constructor() { }
+  allItems = ["item 1", "item 2", "item 3"]
 
   ngOnInit(): void {
   }

@@ -9,7 +9,7 @@ export class BestSellerItemComponent implements OnInit {
 
   constructor() { }
 
-  @Input() item = "example";
+  @Input() items:string[] = [];
 
   ngOnInit(): void {
   }

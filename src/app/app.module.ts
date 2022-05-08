@@ -13,6 +13,9 @@ import { BannerComponent } from './banner/banner.component';
 import { StoryComponent } from './story/story.component';
 import { BestSellersComponent } from './best-sellers/best-sellers.component';
 import { BestSellerItemComponent } from './best-seller-item/best-seller-item.component';
+import { CartComponent } from './cart/cart.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { BestSellerItemComponent } from './best-seller-item/best-seller-item.com
     BannerComponent,
     StoryComponent,
     BestSellersComponent,
-    BestSellerItemComponent
+    BestSellerItemComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,10 @@ import { BestSellerItemComponent } from './best-seller-item/best-seller-item.com
       {path: 'services', component: ServicesComponent},
       {path: 'about', component: AboutComponent},
       {path: 'create-order', component: CreateOrderComponent},
-    ])
+    ]),
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
