@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
@@ -8,6 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class StoryComponent implements OnInit {
 
   constructor() { }
+
+  test(): void {
+    console.log("clicked on button")
+    
+  }
 
   ngOnInit(): void {
   }

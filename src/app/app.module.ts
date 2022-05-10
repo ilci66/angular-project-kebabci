@@ -16,7 +16,8 @@ import { BestSellerItemComponent } from './best-seller-item/best-seller-item.com
 import { CartComponent } from './cart/cart.component';
 
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+// import { reducers, metaReducers, itemCardReducer } from './reducers';
+import { itemCardReducer } from './reducers';
 
 @NgModule({
   declarations: [
@@ -41,9 +42,11 @@ import { reducers, metaReducers } from './reducers';
       {path: 'about', component: AboutComponent},
       {path: 'create-order', component: CreateOrderComponent},
     ]),
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    })
+    // StoreModule.forRoot(reducers, {
+    //   metaReducers
+    // })
+    StoreModule.forRoot({ item: itemCardReducer })
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
