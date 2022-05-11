@@ -2,7 +2,11 @@ import { createAction, props } from "@ngrx/store";
 
 export const add = createAction(
     '[Add Item] Add',
-    props<{ id: string }>()
+    props<{ 
+        id: number, 
+        name: string, 
+        price: number 
+    }>()
 )
 
 export const remove = createAction(
@@ -12,4 +16,4 @@ export const remove = createAction(
 
 export const reset = createAction('[Reset Item] Reset')
 
-export const test = createAction('[Test Stuff] Test')
+export const test = createAction('[Test Stuff] Test');

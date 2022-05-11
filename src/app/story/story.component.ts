@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import * as myActions from '../actions/index'
+import {add, remove, reset, test} from '../actions/index'
 
 @Component({
   selector: 'app-story',
@@ -9,6 +9,9 @@ import * as myActions from '../actions/index'
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
+
+  // totalPrice$: Observable<number> = this.store.select('totalPrice');
+  // names$: Observable<string[]> = this.store.select('names');
   totalPrice$: Observable<number>;
   names$: Observable<string[]>;
 
@@ -19,9 +22,18 @@ export class StoryComponent implements OnInit {
 
   test(): void {
     console.log("clicked on button")
-    this.store.dispatch(myActions.test())
+    this.store.dispatch(test())
+    console.log(this.store)
   }
+  add(): void {
+    console.log("want to add");
 
+    this.store.dispatch(add({id:2, name: "doner", price: 2}))
+
+    console.log(this.store.select('names'), this.store.select('totalPrice'))
+
+
+  }
 
   ngOnInit(): void {
   }

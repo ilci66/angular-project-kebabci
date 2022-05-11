@@ -9,7 +9,7 @@ import {
   Action
 } from '@ngrx/store';
 import { environment } from '../../environments/environment';
-import * as myActions from '../actions/index'
+import { add, remove, reset, test } from '../actions/index'
 
 export interface State {
   totalPrice: number;
@@ -29,11 +29,29 @@ export const initialState: State = {
 
 export const itemCardReducer: ActionReducer<State, Action> = createReducer(
   initialState,
-  on(myActions.add, state => ({...state, totalPrice: state.totalPrice + 1, names: [...state.names, "test" ] })),
-  on(myActions.remove, (state, {name}) => ({...state, totalPrice: state.totalPrice - 1, names: state.names.filter(n => n !== name)})),
-  on(myActions.reset, state => ({ totalPrice: 0, names: [] })),
-  on(myActions.test, state => {console.log("test works"); return state} )
-) 
+  on(add, (state, {id, price, name}) => {
+      return state = {
+        ...state, 
+        totalPrice: state.totalPrice + price, 
+        names: [...state.names, name]
+      }
+  }),
+
+  on(remove, (state, {name}) => {
+    return {
+      ...state, 
+      totalPrice: state.totalPrice - 1, 
+      names: state.names.filter(n => n !== name)
+    }
+  }),
+
+  on(reset, state => ({ totalPrice: 0, names: [] })),
+
+  on(test, state => {
+    console.log("test works"); 
+    return state
+  })
+);
 
 // export const reducers: ActionReducerMap<State> = {
   
