@@ -17,7 +17,7 @@ import { CartComponent } from './cart/cart.component';
 
 import { StoreModule } from '@ngrx/store';
 // import { reducers, metaReducers, itemCardReducer } from './reducers';
-import { itemCardReducer } from './reducers';
+import { itemCardReducer } from './state/reducers';
 
 @NgModule({
   declarations: [

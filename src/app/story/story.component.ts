@@ -2,6 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {add, remove, reset, test} from '../actions/index'
+import { Cart, Item } from '../state/models';
+import { 
+  selectCartState, 
+  selectItems, 
+  selectState 
+} from '../state/selectors';
+
 
 @Component({
   selector: 'app-story',
@@ -9,15 +16,18 @@ import {add, remove, reset, test} from '../actions/index'
   styleUrls: ['./story.component.css']
 })
 export class StoryComponent implements OnInit {
+  // totalPrice$: Observable<number>;
+  // names$: Observable<string[]>;
 
-  // totalPrice$: Observable<number> = this.store.select('totalPrice');
-  // names$: Observable<string[]> = this.store.select('names');
-  totalPrice$: Observable<number>;
-  names$: Observable<string[]>;
-
+  cart$: Observable<readonly Cart[]>;
+  items$: Observable<readonly Item[]>;
+  
   constructor(private store: Store<{totalPrice:number, names:string[]}>) {
-    this.totalPrice$ = store.select('totalPrice');
-    this.names$ = store.select('names');
+    // this.totalPrice$ = this.store.select('totalPrice');
+    // this.names$ = store.select('names');
+
+    this.cart$ = this.store.select(selectCartState);
+    this.items$ = this.store.select(selectItems);
   }
 
   test(): void {
@@ -30,9 +40,8 @@ export class StoryComponent implements OnInit {
 
     this.store.dispatch(add({id:2, name: "doner", price: 2}))
 
-    console.log(this.store.select('names'), this.store.select('totalPrice'))
-
-
+    // console.log(this.store.select('names'), this.store.select('totalPrice'))
+    console.log(this.cart$)
   }
 
   ngOnInit(): void {

@@ -1,40 +1,27 @@
 import {
   ActionReducer,
-  ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer,
   createReducer,
   on,
   Action
 } from '@ngrx/store';
-import { environment } from '../../environments/environment';
-import { add, remove, reset, test } from '../actions/index'
+import { environment } from '../../../environments/environment';
+import { add, remove, reset, test } from '../../actions/index'
+import { Item, Cart } from '../models';
 
-export interface State {
-  totalPrice: number;
-  names: string[];
-}
-
-export interface Item {
-  price: number,
-  id: number,
-  name: string
-}
-
-export const initialState: State = {
+export const initialState: Cart = {
   totalPrice: 0,
   names: []
-}
+};
 
-export const itemCardReducer: ActionReducer<State, Action> = createReducer(
+export const itemCardReducer: ActionReducer<Cart, Action> = createReducer(
   initialState,
   on(add, (state, {id, price, name}) => {
-      return state = {
-        ...state, 
-        totalPrice: state.totalPrice + price, 
-        names: [...state.names, name]
-      }
+    return state = {
+      ...state, 
+      totalPrice: state.totalPrice + price, 
+      names: [...state.names, name]
+    }
   }),
 
   on(remove, (state, {name}) => {
@@ -64,6 +51,6 @@ export const debug = (reducer: ActionReducer<any>): ActionReducer<any> => {
 
     return reducer(state, action)
   }
-}
+};
 
-export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [] = [debug];
+export const metaReducers: MetaReducer<Cart>[] = !environment.production ? [] : [] = [debug];
